@@ -73,7 +73,7 @@ use std::ptr::{self, NonNull};
 use std::sync::atomic::{self, AtomicPtr, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex, MutexGuard};
 use std::task::{Context, Poll, Waker};
-use std::thread::{self, Thread};
+use sgx_tstd::thread::{self, SgxThread as Thread};
 use std::time::{Duration, Instant};
 use std::usize;
 
