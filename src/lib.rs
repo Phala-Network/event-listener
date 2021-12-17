@@ -73,7 +73,10 @@ use std::ptr::{self, NonNull};
 use std::sync::atomic::{self, AtomicPtr, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex, MutexGuard};
 use std::task::{Context, Poll, Waker};
+#[cfg(feature = "phala-sgx")]
 use sgx_tstd::thread::{self, SgxThread as Thread};
+#[cfg(not(feature = "phala-sgx"))]
+use std::thread::{self, Thread};
 use std::time::{Duration, Instant};
 use std::usize;
 
